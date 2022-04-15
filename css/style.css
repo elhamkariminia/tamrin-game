@@ -1,0 +1,12 @@
+body {
+  direction: center;
+}
+section {
+  text-align: center;
+}
+.mydiv-user {
+  background-color: rgb(151, 148, 148);
+}
+.mydiv-tass {
+  background-color: rgb(138, 132, 132);
+}
