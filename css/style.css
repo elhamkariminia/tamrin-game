@@ -11,3 +11,23 @@ section {
 .mydiv-tass {
   background-color: rgb(138, 132, 132);
 }
+.mydiv-gamepage {
+  background-color: rgb(251, 252, 253);
+  
+  margin: auto;
+  border: 1px solid black;
+}
+.row {
+  background-color:rgb(195, 198, 199) ;
+  
+  margin: 5px;
+  border: 1px solid rgb(46, 45, 45);
+}
+.column {
+  width: 50px;
+  height:50px;
+  margin: 5px;
+  border: 1px solid red;
+  display: inline-block;
+}
+
