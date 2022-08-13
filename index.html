@@ -1,66 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>game</title>
-  </head>
-  <body>
-    <button onclick="inputname()">start game</button>
-    <div class="mydiv-user">
-      <section>
-        <form>
-          <label for="fname">Player One:</label>
-          <input type="text" id="playerid" /><br />
-          <label for="lname">Player Two:</label>
-          <input type="text" id="player2id" />
-        </form>
-      </section>
-    </div>
-    <div class="mydiv-tass">
-      <section>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>game</title>
+</head>
+
+<body>
+  <button onclick="inputname()">start game</button>
+  <div class="mydiv-user">
+    <section>
+      <form>
+        <label for="fname">Player One:</label>
+        <input type="text" id="playerid" />
+        <span class="circleP1"></span>
         <br />
-        <form>
-          <label for="tass number">Tass:</label>
-          <input type="text" id="inputid" />
-          <input
-            type="button"
-            onclick="btnOpenClick()"
-            value="Random tass"
-            id="buttonid"
-          />
-        </form>
-      </section>
-      <section>
-        <div class="mydiv-gamepage">
-          <div class="row">
-            <div class="column">"start"</div>
-            <div class="column">"1"</div>
-            <div class="column">"2"</div>
-            <div class="column">"3"</div>
-            <div class="column">"4"</div>
-            <div class="column">"5"</div>
-            <div class="column">"6"</div>
-            <div class="column">"7"</div>
-            <div class="column">"8"</div>
-            <div class="column">"9"</div>
-            <div class="column">"10"</div>
-            <div class="column">"11"</div>
-            <div class="column">"12"</div>
-            <div class="column">"13"</div>
-            <div class="column">"14"</div>
-            <div class="column">"15"</div>
-            <div class="column">"16"</div>
-            <div class="column">"17"</div>
-            <div class="column">"18"</div>
-            <div class="column">"19"</div>
-            <div class="column">"20"</div>
+        <label for="lname">Player Two:</label>
+        <input type="text" id="player2id" />
+        <span class="circleP2"></span>
+      </form>
+    </section>
+  </div>
+  <div class="mydiv-tass">
+    <section>
+      <br />
+      <form>
+        <label for="tass number">Tass:</label>
+        <input type="text" id="inputid"/>
+        <input type="button" onclick="randomTassFn()" value="Random tass" id="buttonid" />
+        <button onclick="movement()" type="button">Move</button>
+        <button onclick="testFn()" type="button">testFn</button>
+      </form>
+    </section>
+    <section>
+      <div class="mydivGamePage">
+        <div class="row">
+          <div class="box startBox" id="startboxid" data-box-number="0">
+
+            <div class="childBox">
+              <span class="circleP1" id="mohrep1"></span>
+            </div>
+            <div class="childBox">
+              <span class="circleP2" id="mohrep2"></span>
+            </div>
+
+            <div></div>
+          </div>
+          <div class="box" id="box1" data-box-number="1">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">1</div>
+          </div>
+          <div class="box" data-box-number="2">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">2</div>
+          </div>
+          <div class="box" data-box-number="3">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">3</div>
+          </div>
+          <div class="box" data-box-number="4">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">4</div>
+          </div>
+          <div class="box" data-box-number="5">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">5</div>
+          </div>
+          <div class="box" data-box-number="6">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">6</div>
+          </div>
+          <div class="box" data-box-number="7">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">7</div>
+          </div>
+          <div class="box" data-box-number="8">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">8</div>
+          </div>
+          <div class="box" data-box-number="9">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">9</div>
+          </div>
+          <div class="box" data-box-number="10">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">10</div>
+          </div>
+          <div class="box" data-box-number="11">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">11</div>
+          </div>
+          <div class="box" data-box-number="12">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">12</div>
+          </div>
+          <div class="box" data-box-number="13">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">13</div>
+          </div>
+          <div class="box" data-box-number="14">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">14</div>
+          </div>
+          <div class="box" data-box-number="15">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">15</div>
+          </div>
+          <div class="box" data-box-number="16">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">16</div>
+          </div>
+          <div class="box" data-box-number="17">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">17</div>
+          </div>
+          <div class="box" data-box-number="18">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">18</div>
+          </div>
+          <div class="box" data-box-number="19">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">19</div>
+          </div>
+          <div class="box" data-box-number="20">
+            <div class="childBox p1id"></div>
+            <div class="childBox p2id"></div>
+            <div class="childBox"></div>
+            <div class="childBox">20</div>
           </div>
         </div>
-      </section>
-    </div>
-    <script src="js/app.js"></script>
-  </body>
+      </div>
+    </section>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+
 </html>
