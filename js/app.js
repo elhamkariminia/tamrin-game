@@ -32,14 +32,24 @@ function returnMohreP1Placement(){
   var player = document.getElementById("mohrep1");
   PN=player.closest('.box');
   placeP1=PN.getAttribute("data-box-number");
-
   return parseInt(placeP1);
+}
+
+function clearRandomTass(){
+  randomTass=" ";
 }
 
 function movement(event) {
   var databoxNumber =  returnMohreP1Placement() + parseInt(randomTass);
   var player = document.getElementById("mohrep1");
   var mybox = document.querySelector("div.box[data-box-number='" + parseInt(databoxNumber) + "'] .p1id");
-  mybox.appendChild(player);
+  clearRandomTass();
+  if (mybox<20){
+    alert("next player");
+  }
+  else{
+    mybox.appendChild(player);
+  }
 }
+
 
