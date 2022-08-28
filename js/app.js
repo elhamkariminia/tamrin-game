@@ -53,13 +53,35 @@ function movement(event) {
   var databoxNumber =  returnMohreP1Placement() + parseInt(randomTass);
   var player = document.getElementById("mohrep1");
   var mybox = document.querySelector("div.box[data-box-number='" + parseInt(databoxNumber) + "'] .p1id");
-  //clearRandomTass();
   if (mybox<20){
     alert("next player");
   }
   else{
     mybox.appendChild(player);
   }
+  
+}
+
+  function returnMohreP2Placement(){
+    var PN2=null; //PN2=Placement number
+    var player = document.getElementById("mohrep2");
+    PN2=player.closest('.box');
+    placeP2=PN2.getAttribute("data-box-number");
+    return parseInt(placeP2);
+  }
+
+
+function movementP2(){
+  var databoxNumber =  returnMohreP2Placement() + parseInt(randomTass);
+  var player = document.getElementById("mohrep2");
+  var mybox = document.querySelector("div.box[data-box-number='" + parseInt(databoxNumber) + "'] .p2id");
+  if (mybox<20){
+    alert("next player");
+  }
+  else{
+    mybox.appendChild(player);
+  }
+ // movement();
 }
 
 
